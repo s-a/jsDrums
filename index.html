@@ -19,50 +19,48 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <style type="text/css">
-      
-      #drumcomputer table{
-        border: 0;
-        background-color:  rgb(61, 61, 61);
-        margin: 11px;
-        padding: 11px;
-        border-radius: 15px;
-        border-spacing: 0;
-        border-collapse: collapse;
-      }
-      #drumcomputer table td{
-        
-        padding: 5px;
-      }
-      #drumcomputer .step {
-        border-radius: 15px;
-        background-color: #001A66;
-        width: 20px;
-        height: 17px;
-        text-align: center;
-        cursor: pointer;
-        border-width: 0px;
-      }
+   <style type="text/css">
+#drumcomputer table{
+  border: 0;
+  background-color:  rgb(61, 61, 61);
+  margin: 11px;
+  padding: 11px;
+  border-radius: 15px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+#drumcomputer table td{
+  
+  padding: 5px;
+}
+#drumcomputer .step {
+  border-radius: 15px;
+  background-color: #001A66;
+  width: 20px;
+  height: 17px;
+  text-align: center;
+  cursor: pointer;
+  border-width: 0px;
+}
 
-      #drumcomputer .odd{
-        background-color: #002DB3;
-      }
+#drumcomputer .odd{
+  background-color: #002DB3;
+}
 
-      #drumcomputer .play{
-        border-style: none;
-        color: #fff;
-      }
+#drumcomputer .play{
+  border-style: none;
+  color: #fff;
+}
 
-      #drumcomputer .active, input.active{
-        color: rgb(254, 0, 0);
-        background-color: rgb(254, 0, 0);
-        -webkit-box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
-        -moz-box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
-        box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
-        color:#fff;
-      }
-
-    </style>
+#drumcomputer .active, input.active{
+  color: rgb(254, 0, 0);
+  background-color: rgb(254, 0, 0);
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
+  box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
+  color:#fff;
+}
+   </style>
     <script type="text/javascript">
       $(function(){
         jsDrums.load({
@@ -105,12 +103,31 @@
 
         <h3>Welcome to jsDrums.</h3>
 
-<p>jsDrums is a Javascript experiment to creat beats online!</p>
-    <span>BPM: </span><input type="text" value="100" onChange="jsDrums.setBpm($(this).attr('value'))" />
-    <input id="drumcomputer__play" disabled="disabled" type="button" value="loading sample data..." onClick="jsDrums.toggleStartStop(this);" />
-    <div id="drumcomputer"></div> 
-<pre><code>
-</code></pre>
+        <p>jsDrums is a Javascript experiment to create beats online!</p>
+
+        <h2>Sequenzer</h2>
+        <span>BPM: </span><input type="text" value="100" onChange="jsDrums.setBpm($(this).attr('value'))" />
+        <input id="drumcomputer__play" disabled="disabled" type="button" value="loading sample data..." onClick="jsDrums.toggleStartStop(this);" />
+        <div id="drumcomputer"></div> 
+        <h2>Source Code</h2>
+        <pre><code>      
+$(function(){
+  jsDrums.load({
+    bpm:90, 
+    samples:[
+      { name:'Base', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base' },
+      { name:'Base+Hihat', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base_and_hi' },
+      { name:'Snare', filename:'https://raw.github.com/s-a/jsDrums/master/samples/snare' } 
+    ],
+    sequenzer:[{  
+      sequenz:[0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1] // sampleID / step
+    }],
+    done:function(){ 
+      $('#drumcomputer__play').attr('value','Play').removeAttr('disabled');
+    }
+  });
+});
+        </code></pre>
  
  
       </section>
