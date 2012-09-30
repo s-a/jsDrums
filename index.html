@@ -22,6 +22,24 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <script type="text/javascript">
+      $(function(){
+        jsDrums.load({
+          bpm:90, 
+          samples:[
+            { name:'Base', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base' },
+            { name:'Base+Hihat', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base_and_hi' },
+            { name:'Snare', filename:'https://raw.github.com/s-a/jsDrums/master/samples/snare' } 
+          ],
+          sequenzer:[{  
+            sequenz:[0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1] // sampleID / step
+          }],
+          done:function(){ 
+            $('#drumcomputer__play').attr('value','Play').removeAttr('disabled');
+          }
+        });
+      });
+    </script>
   </head>
   <body>
       <div id="header">
