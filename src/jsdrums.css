@@ -1,0 +1,42 @@
+
+#drumcomputer table{
+	border: 0;
+	background-color:  rgb(61, 61, 61);
+	margin: 11px;
+	padding: 11px;
+	border-radius: 15px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+#drumcomputer table td{
+	
+	padding: 5px;
+}
+#drumcomputer .step {
+	border-radius: 15px;
+	background-color: #001A66;
+	width: 20px;
+	height: 17px;
+	text-align: center;
+	cursor: pointer;
+	border-width: 0px;
+}
+
+#drumcomputer .odd{
+	background-color: #002DB3;
+}
+
+#drumcomputer .play{
+	border-style: none;
+	color: #fff;
+}
+
+#drumcomputer .active, input.active{
+	color: rgb(254, 0, 0);
+	background-color: rgb(254, 0, 0);
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
+	box-shadow: 0px 0px 15px 5px rgba(254, 0, 0, .75);
+	color:#fff;
+}
+

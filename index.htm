@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>a</title>		
+		<link rel="stylesheet" type="text/css" href="src/jsdrums.css">
+		<style type="text/css">
+			body{
+				background-color: #1F1F1F;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<span>BPM: </span><input type="text" value="100" onChange="jsDrums.setBpm($(this).attr('value'))" />
+		<input id="drumcomputer__play" disabled="disabled" type="button" value="loading sample data..." onClick="jsDrums.toggleStartStop(this);" />
+		<div id="drumcomputer"></div>		
+
+		<script src="src/jquery.min.js" type="text/javascript" language="javascript"></script>
+		<script src="src/jsdrums.js" type="text/javascript" language="javascript" ></script>
+		<script async src="src/app.js" type="text/javascript" language="javascript"></script>
+	</body>
+</html>
