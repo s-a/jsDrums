@@ -196,20 +196,50 @@ Array.prototype.remove = function(from, to) {
 		setBpm:function(bpm){
 			this.timer.bpm=bpm;
 		},
-		
+		getSequenz:function () {
+			var _result = new Array; 
+			for (var i = 0; i < this.timer.sequenz.length; i++) {
+				var 
+					_item = this.timer.sequenz[i],
+					_set = new Array;
+
+				$(_item.samples).each(function (i,n) {
+					if (n) _set.push(n.pos);
+				});
+				switch(_set.length){
+					case 0:
+					  	_set = -1;
+					  	break;
+					case 1:
+					  	_set = _set[0];
+					  	break;  
+				} 
+				_result.push(_set);
+			};
+			console.log(_result);
+			console.log( JSON.stringify(_result) );
+		},
 		load:function(settings){ 
+			var pattern = settings.sequenzer[0];
 			this.settings = settings;
 			this.samples = new Array();
 			for (var i = 0; i < settings.samples.length; i++) {
 				this.loadSample(settings.samples[i].name,settings.samples[i].filename,i, settings.done);
 			};			
 
-			this.timer = new this._timer(settings.bpm, settings.sequenzer[0].sequenz.length);
+			this.timer = new this._timer(settings.bpm, pattern.sequenz.length);
 
-			for (var _step = 0; _step < settings.sequenzer[0].sequenz.length; _step++) {
-				var n = settings.sequenzer[0].sequenz[_step];
-				if (n!==-1)
-					this.timer.sequenz[_step].samples[n]=(this.samples[n]);
+			for (var _step = 0; _step < pattern.sequenz.length; _step++) {
+				var n = pattern.sequenz[_step];
+				if ($.isArray(n)) {
+					debugger;
+					// fetch multiple samples
+					for (var i = 0; i < n.length; i++) {
+						this.timer.sequenz[_step].samples[ n[i] ]=(this.samples[ n[i] ]);
+					};
+				} else {
+					if (n!==-1) this.timer.sequenz[_step].samples[n]=(this.samples[n]);
+				}
 			}
 
 			this.ui.render(this.samples, this.timer);	
