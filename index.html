@@ -17,6 +17,31 @@
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript" 
+     src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+    <style>
+     .chromeFrameInstallDefaultStyle {
+       width: 100%; /* default is 800px */
+       border: 5px solid blue;
+     }
+    </style>
+
+
+ 
+    <script>
+     // The conditional ensures that this code will only execute in IE,
+     // Therefore we can use the IE-specific attachEvent without worry
+     window.attachEvent("onload", function() {
+       CFInstall.check({
+         mode: "inline", // the default
+         node: "prompt"
+       });
+     });
+    </script>
+  <![endif]-->
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
    <style type="text/css">
@@ -106,9 +131,58 @@
         <p>jsDrums is a Javascript experiment to create beats online!</p>
 
         <h2>Sequenzer</h2>
-        <span>BPM: </span><input type="text" value="100" onChange="jsDrums.setBpm($(this).attr('value'))" />
-        <input id="drumcomputer__play" disabled="disabled" type="button" value="loading sample data..." onClick="jsDrums.toggleStartStop(this);" />
-        <div id="drumcomputer"></div> 
+
+
+<h1><a href="">jsDrums</a> - A Javascript Dumcomputer Experiment</h1>
+        
+    <div id="drumcomputer"></div>
+
+    <h2>Audio Control:</h2> 
+    <input id="slide" type="range" min="60" max="180" step="1" value="100" onchange="$('#bpm').html(this.value);jsDrums.setBpm(this.value)" />
+    <span id="drumcomputer__bpm">
+      <span id="bpm">100</span> 
+      <span>BPM</span> 
+    </span>
+    <input id="drumcomputer__play" disabled="disabled" type="button" value="loading sample data..." 
+    onClick="jsDrums.toggleStartStop(this);" />
+
+    <input id="drumcomputer__save" type="button" value="Save to console" onClick="jsDrums.getSequenz();" />
+
+    <div id="drumcomputer__presets">
+      <h2>Presets:</h2>
+      <ul>
+        <li>
+          <a href="javascript:void(0);" onclick="jsDrums.load([0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1],160);">Drum and Bass</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="jsDrums.load([[0,3],-1,0,-1,-1,-1,2,-1,3,-1,0,-1,2,-1,1,-1,[0,3],-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,[0,3],-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,[0,3],-1,0,-1,-1,-1,2,-1,-1,-1,[0,3],-1,2,-1,1,-1],160);">Drum and Bass with baseline</a>
+        </li>
+        <li>       
+          <a href="javascript:void(0);" onclick="jsDrums.load([0,0,-1,0,-1,0,0,-1,-1,-1,-1,-1,2,-1,-1,-1,0,0,-1,0,-1,0,0,-1,-1,-1,-1,-1,2,-1,-1,-1],85);">Terminator Theme</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="jsDrums.load([0,-1,-1,-1,0,-1,-1,-1,0,-1,-1,-1,0,-1,1,-1],160);">Technos Beat</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="jsDrums.load([1,-1,-1,-1,2,-1,-1,-1,-1,-1,-1,-1,[1,2],-1,0,-1],92);">Default Beat</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="jsDrums.load([[0,3],-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,[0,3],-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1],80);">Dubstep</a>
+        </li>
+      </ul> 
+    </div>
+    <script src="src/jquery.min.js" type="text/javascript" language="javascript"></script>
+    <script src="src/jsdrums.js" type="text/javascript" language="javascript" ></script>
+    <script async src="src/app.js" type="text/javascript" language="javascript"></script>
+
+      <div id="prompt">
+        <!-- if IE without GCF, prompt goes here -->
+      </div>
+
+
+
+
+
         <h2>Source Code</h2>
         <pre><code>      
 $(function(){
