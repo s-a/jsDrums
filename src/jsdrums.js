@@ -3,7 +3,7 @@ Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);
   this.length = from < 0 ? this.length + from : from;
   return this.push.apply(this, rest);
-};
+}; 
 
 /*!
 * JavaScript Drumcomputer Library v0.5
@@ -16,7 +16,7 @@ Array.prototype.remove = function(from, to) {
 		_timer:function(bpm, steps){
 			this.bpm = bpm;
 			this.step = 0;
-			this.steps = steps;
+			this.steps = steps; 
 			this.onTick=function(timer){
 				if (!this.stopped){
 					this.tick();
@@ -28,7 +28,7 @@ Array.prototype.remove = function(from, to) {
 			};
 			this.tick=function(){
 				if (!this.stopped){
-					var _timer = (4 /* minutes */ * 60 /* seconds */ * 1000 /* milliseconds*/ / this.bpm) / this.steps;
+					var _timer = (this.steps/16) * (4 /* minutes */ * 60 /* seconds */ * 1000 /* milliseconds*/ / this.bpm) / this.steps;
 					window.setTimeout(function(){
 						jsDrums.timer.onTick();
 					},_timer);
@@ -79,10 +79,11 @@ Array.prototype.remove = function(from, to) {
 						}
 						$(this).removeClass('active')
 					}
-				},				
+				}				
 			},
 			render:function(samples, timer){
-				var _table = $('<table/>',{
+				if (this._table) this._table.remove();
+				this._table = $('<table/>',{
 					id:'bp_dc',
 					border:1
 				}); 
@@ -90,7 +91,7 @@ Array.prototype.remove = function(from, to) {
 				for(var r=0; r<samples.length; r++){
 					var _tr = $('<tr/>',{
 					});
-					$('<td/>').addClass('play').html(samples[r].id).click(function(){
+					$('<td/>').addClass('track-sample').html(samples[r].id).click(function(){
 						alert($(this).html()+': So far you cannot change a sample.');}
 					).appendTo(_tr);
 
@@ -105,15 +106,17 @@ Array.prototype.remove = function(from, to) {
 						var _active = ''; 
 						var _sample = timer.sequenz[c].samples[r];
 						if (_sample==undefined) _sample=null;
-						if (c % (timer.steps/4) == 0) _className ='odd'; 
+						if (c % (timer.steps / (timer.steps/4)) == 0) _className ='odd'; 
 						if (_sample){
 							_active = "active";
 						}
-						$('<td/>').addClass('step').addClass(_className).addClass(_active).click(this.events.toggle_sample_active_click).appendTo(_tr);
+						$('<td/>').html("&#149;").addClass('step').addClass(_className).addClass(_active).click(this.events.toggle_sample_active_click).appendTo(_tr);
 					}
-					_tr.appendTo(_table);
+					_tr.appendTo(this._table);
 				}
-				_table.appendTo($('#drumcomputer'));
+				this._table.appendTo($('#drumcomputer'));
+				$('#slide').val(timer.bpm);
+				$('#bpm').html(timer.bpm);
 			} 
 		},
 		toggleStartStop:function(sender){
@@ -135,7 +138,7 @@ Array.prototype.remove = function(from, to) {
 		stop:function(){
 			this.timer.stop();
 		},
-		loadSample:function(ident,uri,position, callback){
+		loadSample:function(ident,uri,position,callback){
  			var 
  				self = this, 
  				onloadeddata = function() {
@@ -151,8 +154,7 @@ Array.prototype.remove = function(from, to) {
 				width:0,
 				height:0,
 				src: uri+'.wav'
-			});
-			console.log(_snd),
+			}); 
 			_snd.appendTo($('#drumcomputer'));		
 			_snd.get(0).addEventListener('loadeddata', onloadeddata, false);
 			this.samples.push({
@@ -171,7 +173,9 @@ Array.prototype.remove = function(from, to) {
 					} 
 				},
 				play:function(){
-					var _ = $('#BP_DC_'+this.pos+'_1');
+					var 
+						_ = $('#BP_DC_'+this.pos+'_1'),
+						self=this;
 					
 					window.setTimeout(function(){
 						_.addClass('active');
@@ -179,10 +183,10 @@ Array.prototype.remove = function(from, to) {
 					},1);
 
 				    try {
-					    this.sound.pause();
-						this.sound.currentTime= 0.0;
-					    this.sound.volume=0.5;
-						this.sound.play();
+			    		self.sound.pause();
+						self.sound.currentTime= 0;
+						window.setTimeout(self.sound.play(),80);
+					   		
 					} catch (e) {
 						jsDrums.stop();
 						alert(':O( --- Error.');
@@ -219,20 +223,23 @@ Array.prototype.remove = function(from, to) {
 			console.log(_result);
 			console.log( JSON.stringify(_result) );
 		},
-		load:function(settings){ 
-			var pattern = settings.sequenzer[0];
-			this.settings = settings;
-			this.samples = new Array();
-			for (var i = 0; i < settings.samples.length; i++) {
-				this.loadSample(settings.samples[i].name,settings.samples[i].filename,i, settings.done);
-			};			
+		init:function (settings) {
+			var 
+				pattern = settings.sequenz[0];
 
-			this.timer = new this._timer(settings.bpm, pattern.sequenz.length);
+				this.samples = new Array();
+				for (var i = 0; i < settings.samples.length; i++) {
+					this.loadSample(settings.samples[i].name,settings.samples[i].filename,i, settings.done);
+				};			
 
-			for (var _step = 0; _step < pattern.sequenz.length; _step++) {
-				var n = pattern.sequenz[_step];
-				if ($.isArray(n)) {
-					debugger;
+				this.loadSequenz(pattern, settings.bpm);
+				
+		},
+		loadSequenz: function (sequenz, bpm) {
+			this.timer = new this._timer(bpm, sequenz.length);
+			for (var _step = 0; _step < sequenz.length; _step++) {
+				var n = sequenz[_step];
+				if ($.isArray(n)) { 
 					// fetch multiple samples
 					for (var i = 0; i < n.length; i++) {
 						this.timer.sequenz[_step].samples[ n[i] ]=(this.samples[ n[i] ]);
@@ -241,9 +248,16 @@ Array.prototype.remove = function(from, to) {
 					if (n!==-1) this.timer.sequenz[_step].samples[n]=(this.samples[n]);
 				}
 			}
+		},
+		load:function(settings, bpm){ 
+			if ($.isArray(settings)){
+				this.loadSequenz(settings, (bpm ? bpm : this.settings.bpm));
+			} else {
+				this.settings = settings;
+				this.init(settings);
+			}
 
-			this.ui.render(this.samples, this.timer);	
-				
+			this.ui.render(this.samples, this.timer);		
 		}
 	}
 	if (!window.jsDrums) window.jsDrums=_drumComputer;		

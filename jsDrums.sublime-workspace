@@ -1,0 +1,505 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sett",
+				"setTimeout"
+			],
+			[
+				"ff",
+				"1F1F1F"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"pa",
+				"pattern"
+			],
+			[
+				"load",
+				"loadSequenz"
+			],
+			[
+				"remo",
+				"remove"
+			],
+			[
+				"se",
+				"settings"
+			],
+			[
+				"pu",
+				"push"
+			],
+			[
+				"time",
+				"timer"
+			],
+			[
+				"_",
+				"_snd"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"bo",
+				"body"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"border-s",
+				"border-style"
+			],
+			[
+				"ste",
+				"step"
+			],
+			[
+				"tim",
+				"timer"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"sequ",
+				"sequenzer"
+			],
+			[
+				"seq",
+				"sequenzer"
+			],
+			[
+				"app",
+				"application"
+			],
+			[
+				"mo",
+				"mousex"
+			],
+			[
+				"Mo",
+				"mousey"
+			],
+			[
+				"render",
+				"renderTerretory"
+			],
+			[
+				"ce",
+				"centerY"
+			],
+			[
+				"re",
+				"renderTerretory"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/jsdrums.js",
+			"settings":
+			{
+				"buffer_size": 6807,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.htm",
+			"settings":
+			{
+				"buffer_size": 3720,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app.js",
+			"settings":
+			{
+				"buffer_size": 498,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 380.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Object key — key: \"value\""
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/jsDrums/src/jsdrums.css",
+		"/C/xampp/htdocs/jsDrums/src/app.js",
+		"/C/xampp/htdocs/jsDrums/src/jquery.min.js",
+		"/C/xampp/htdocs/jsDrums/index.htm",
+		"/C/xampp/htdocs/jsDrums/src/jsdrums.js",
+		"/C/xampp/htdocs/jsDrums/README.md",
+		"/C/xampp/htdocs/jsDrums/app.js",
+		"/C/xampp/htdocs/jsDrums/jsdrums.css",
+		"/C/xampp/htdocs/jsDrums/jsdrums.js",
+		"/C/xampp/htdocs/jsDrums/index.html",
+		"/C/xampp/htdocs/jsDrums/index_old.htm",
+		"/C/xampp/htdocs/jdrums-read-only/saquery.drumcomputer.js",
+		"/C/xampp/htdocs/messmer_my_moment/nodejs/app.js",
+		"/C/xampp/htdocs/messmer_my_moment/compile.sh",
+		"/C/xampp/htdocs/messmer_my_moment/config/deploy.rb",
+		"/C/xampp/htdocs/messmer_my_moment/www-root/src/tests.js",
+		"/C/xampp/htdocs/messmer_my_moment/_build/build.sh",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/src/router.js",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/src/boot.js",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/templates/pages/welcome.html",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/src/views/pages/location.js",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/src/views/pages/welcome.js",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/src/tests.user_fb_user_login_state_unknown.js",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/src/tests.js",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/index.html",
+		"/C/xampp/htdocs/messmer_my_moment/www-root-dev/src/style.css",
+		"/C/xampp/htdocs/messmer_my_moment/www-root/index.html",
+		"/C/xampp/htdocs/messmer_my_moment/nodejs/test/test1.js",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/templates/view_metro.html",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/templates/pages/welcome.html",
+		"/C/xampp/htdocs/scream-js/.meteor/packages",
+		"/C/xampp/htdocs/scream-js/server/access_control.js",
+		"/C/xampp/htdocs/scream-js/index.html",
+		"/C/Users/stephan/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/scream-js/client/scream.js",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/src/style.css",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/src/views/pages/welcome.js",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/index.html",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/src/lib/demo.js",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/src/lib/backbone_loader.js",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/a/style/scrollpath.css",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/src/lib/slides.jquery.js",
+		"/C/Users/stephan/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/templates/pages/location.html",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/src/router.js",
+		"/C/xampp/htdocs/profile/js/app.js",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/src/app.js",
+		"/C/xampp/htdocs/ahlf-it-com/www-root-dev/css/style.css",
+		"/C/xampp/htdocs/profile/js/views/home/main.js",
+		"/C/xampp/htdocs/profile/index.html",
+		"/C/xampp/htdocs/profile/js/libs/backbone/loader.js",
+		"/C/xampp/htdocs/profile/js/router.js",
+		"/C/xampp/htdocs/profile/templates/home/main.html",
+		"/C/xampp/htdocs/profile/js/views/users/list.js",
+		"/C/xampp/htdocs/ahlf-it.com/www-root-dev/index.html",
+		"/C/xampp/htdocs/ahlf-it.com/www-root-dev/src/boot.js",
+		"/C/xampp/htdocs/ahlf-it.com/www-root-dev/src/app.js",
+		"/C/xampp/htdocs/ahlf-it.com/www-root-dev/src/router.js",
+		"/C/Users/stephan/Desktop/simulation/game.js",
+		"/C/xampp/htdocs/profile/js/libs/MetroJs.js",
+		"/C/Users/stephan/Desktop/simulation/index.htm",
+		"/C/Users/stephan/Desktop/box2d/demos/draw_world.js",
+		"/C/Users/stephan/Desktop/box2d/demos/stack.js",
+		"/C/Users/stephan/Desktop/box2d/game.html",
+		"/C/Users/stephan/Desktop/furious-journey-6378/lib/modules/game.js",
+		"/C/Users/stephan/Desktop/furious-journey-6378/appli.js",
+		"/C/Users/stephan/Desktop/furious-journey-6378/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/examples/serverstats/server.js",
+		"/C/Users/stephan/Desktop/furious-journey-6378/web.js",
+		"/C/Users/stephan/Desktop/furious-journey-6378/routes/index.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"&#1948; ",
+			"play",
+			"render",
+			"\"play\"",
+			"'play",
+			".settings",
+			"this.settings",
+			"'",
+			"){",
+			"debugger",
+			"steps",
+			"\"PLAY",
+			"html('",
+			"PLAY\"",
+			"PLAY",
+			"red",
+			"play",
+			"_table",
+			"isInteger",
+			"remove",
+			"#BP_DC_",
+			"loadSample",
+			"red",
+			"load",
+			"saq.drumComputer",
+			"fb_tab_url",
+			"debugger;",
+			"debugger",
+			"\"connected\"",
+			"not_connected",
+			"connected",
+			"/content/",
+			"/content/images/skills/",
+			"/brands/",
+			"/content/images/skills/",
+			"body",
+			"initScrollPath",
+			"slides_control",
+			"16px",
+			"translatePos",
+			"var",
+			"translatePos",
+			"cla",
+			"inter",
+			"time",
+			"race",
+			"client"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"\"",
+			"jsDrums",
+			"src/",
+			"brands/",
+			"/brands/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/jsdrums.js",
+					"settings":
+					{
+						"buffer_size": 6807,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2980,
+								2980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1743.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.htm",
+					"settings":
+					{
+						"buffer_size": 3720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/app.js",
+					"settings":
+					{
+						"buffer_size": 498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								289,
+								289
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"pa",
+				".meteor/packages"
+			],
+			[
+				"screm",
+				"client/scream.js"
+			],
+			[
+				"rave.js",
+				"node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/examples/serverstats/server.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 272.0,
+	"status_bar_visible": true
+}
