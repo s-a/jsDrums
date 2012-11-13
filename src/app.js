@@ -9,7 +9,7 @@ $(function(){
 			{ name:"Baseline 160bpm", filename:"https://github.com/s-a/jsDrums/raw/master/samples/baseline_1_160" }
 		],
 		sequenz:[
-			[] // sampleID per step 
+			[0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1] // sampleID per step 
 		],
 		done:function(){
 			$("#drumcomputer__play").attr("value","Play").removeAttr("disabled");
