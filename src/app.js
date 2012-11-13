@@ -3,10 +3,10 @@ $(function(){
 		name: "default beat",
 		bpm:90,
 		samples:[
-			{ name:"Base", filename:"samples/base" },
-			{ name:"Base+Hihat", filename:"samples/base_and_hi" },
-			{ name:"Snare", filename:"samples/snare" },
-			{ name:"Baseline 160bpm", filename:"samples/baseline_1_160" }
+			{ name:"Base", filename:"https://github.com/s-a/jsDrums/raw/master/samples/base" },
+			{ name:"Base+Hihat", filename:"https://github.com/s-a/jsDrums/raw/master/samples/base_and_hi" },
+			{ name:"Snare", filename:"https://github.com/s-a/jsDrums/raw/master/samples/snare" },
+			{ name:"Baseline 160bpm", filename:"https://github.com/s-a/jsDrums/raw/master/samples/baseline_1_160" }
 		],
 		sequenz:[
 			[] // sampleID per step 
