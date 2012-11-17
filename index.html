@@ -89,19 +89,22 @@
     <script type="text/javascript">
       $(function(){
         jsDrums.load({
-          bpm:90, 
+          name: "default beat",
+          bpm:90,
           samples:[
-            { name:'Base', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base' },
-            { name:'Base+Hihat', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base_and_hi' },
-            { name:'Snare', filename:'https://raw.github.com/s-a/jsDrums/master/samples/snare' } 
+            { name:"Base", filename:"https://github.com/s-a/jsDrums/raw/master/samples/base" },
+            { name:"Base+Hihat", filename:"https://github.com/s-a/jsDrums/raw/master/samples/base_and_hi" },
+            { name:"Snare", filename:"https://github.com/s-a/jsDrums/raw/master/samples/snare" },
+            { name:"Baseline 160bpm", filename:"https://github.com/s-a/jsDrums/raw/master/samples/baseline_1_160" }
           ],
-          sequenzer:[{  
-            sequenz:[0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1] // sampleID / step
-          }],
-          done:function(){ 
-            $('#drumcomputer__play').attr('value','Play').removeAttr('disabled');
+          sequenz:[
+           []  // sampleID per step 
+          ],
+          done:function(){
+            $("#drumcomputer__play").attr("value","Play").removeAttr("disabled");
+            $("#drumcomputer__presets a:last").click();
           }
-        });
+        }); 
       });
     </script>
   </head>
@@ -173,7 +176,6 @@
     </div>
     <script src="https://github.com/s-a/jsDrums/raw/master/src/jquery.min.js" type="text/javascript" language="javascript"></script>
     <script src="https://github.com/s-a/jsDrums/raw/master/src/jsdrums.js" type="text/javascript" language="javascript" ></script>
-    <script async src="https://github.com/s-a/jsDrums/raw/master/src/app.js" type="text/javascript" language="javascript"></script>
 
       <div id="prompt">
         <!-- if IE without GCF, prompt goes here -->
@@ -187,27 +189,39 @@
         <pre><code>      
 $(function(){
   jsDrums.load({
-    bpm:90, 
+    name: "default beat",
+    bpm:90,
     samples:[
-      { name:'Base', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base' },
-      { name:'Base+Hihat', filename:'https://raw.github.com/s-a/jsDrums/master/samples/base_and_hi' },
-      { name:'Snare', filename:'https://raw.github.com/s-a/jsDrums/master/samples/snare' } 
+      { name:"Base", filename:"https://github.com/s-a/jsDrums/raw/master/samples/base" },
+      { name:"Base+Hihat", filename:"https://github.com/s-a/jsDrums/raw/master/samples/base_and_hi" },
+      { name:"Snare", filename:"https://github.com/s-a/jsDrums/raw/master/samples/snare" },
+      { name:"Baseline 160bpm", filename:"https://github.com/s-a/jsDrums/raw/master/samples/baseline_1_160" }
     ],
-    sequenzer:[{  
-      sequenz:[0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1] // sampleID / step
-    }],
-    done:function(){ 
-      $('#drumcomputer__play').attr('value','Play').removeAttr('disabled');
+    sequenz:[
+     [0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1,0,-1,0,-1,-1,-1,2,-1,-1,-1,0,-1,2,-1,1,-1] // sampleID per step 
+    ],
+    done:function(){
+      $("#drumcomputer__play").attr("value","Play").removeAttr("disabled");
+      $("#drumcomputer__presets a:last").click();
     }
-  });
+  }); 
 });
         </code></pre>
- 
- 
-      </section>
-
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+ <pre>   <code>
+    &lt;div id="drumcomputer"&gt;&lt;/div&gt;<br />
+<br />
+    &lt;h2&gt;Audio Control:&lt;/h2&gt; <br />
+    &lt;input id="slide" type="range" min="60" max="180" step="1" value="100" onchange="$('#bpm').html(this.value);jsDrums.setBpm(this.value)" /&gt;<br />
+    &lt;span id="drumcomputer__bpm"&gt;<br />
+      &lt;span id="bpm"&gt;100&lt;/span&gt; <br />
+      &lt;span&gt;BPM&lt;/span&gt; <br />
+    &lt;/span&gt;<br />
+    &lt;input id="drumcomputer__play" disabled="disabled" type="button" value="loading sample data..." <br />
+    onClick="jsDrums.toggleStartStop(this);" /&gt;<br />
+<br />
+    &lt;input id="drumcomputer__save" type="button" value="Save to console" onClick="jsDrums.getSequenz();" /&gt; <br />
+      &lt;/section&gt;
+ </code></pre> 
     
   </body>
 </html>
